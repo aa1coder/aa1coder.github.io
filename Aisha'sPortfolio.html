@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aisha's Portfolio</title>
+    <style>
+        .button {
+            border: none;
+            color: black;
+            padding: 25px 65px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 20px 2px;
+            cursor: pointer;
+        }
+
+        .button1 { background-color: #04AA9D; } 
+        .button2 { background-color: #008CBA; } 
+        .button3 { background-color: green; }
+        .button4 { background-color: blue; }
+        .button5 { background-color: pink; }
+        .button6 { background-color: yellow; }
+    </style>
+</head>
+
+<body>
+
+    <a href="javascript:void(0);" onclick="openCinemaProgram()">
+        <button id="menu" align="middle" class="button button3">Cinema Program</button>
+    </a>
+
+    <script>
+        function openCinemaProgram() {
+            var cinema = {
+                movies: [],
+                showtimes: [],
+                menu: {
+                    items: [
+                        { name: "Popcorn", price: 5.00 },
+                        { name: "Soda", price: 3.00 },
+                        { name: "Candy", price: 2.50 }
+                    ]
+                },
+                scanner: { nextLine: function () { return prompt(); } },
+                writer: null
+            };
+
+            // Load data
+            loadData();
+
+            var userType = askUserType();
+            if (userType.toLowerCase() === "employee") {
+                showEmployeeMenu();
+            } else if (userType.toLowerCase() === "customer") {
+                showCustomerMenu();
+            } else {
+                alert("Invalid user type.");
+            }
+
+            function loadData() {
+                // Simulate loading movies and showtimes from files
+                cinema.movies.push({ title: "Movie1", genre: "Genre1" });
+                cinema.movies.push({ title: "Movie2", genre: "Genre2" });
+
+                cinema.showtimes.push({ movie: cinema.movies[0], time: "10:00 AM" });
+                cinema.showtimes.push({ movie: cinema.movies[1], time: "2:00 PM" });
+            }
+
+            function askUserType() {
+                return cinema.scanner.nextLine();
+            }
+
+            function showEmployeeMenu() {
+                // Implement the employee menu logic...
+                alert("Employee Menu:");
+
+                var employeeOption = prompt("Select an option:\n1. Add/Delete Showtimes\n2. Change Menu");
+
+                if (employeeOption === "1") {
+                    addDeleteShowtimes();
+                } else if (employeeOption === "2") {
+                    changeMenu();
+                } else {
+                    alert("Invalid option.");
+                }
+            }
+
+            function addDeleteShowtimes() {
+                alert("Current Showtimes:");
+                for (var i = 0; i < cinema.showtimes.length; i++) {
+                    alert(i + 1 + ". " + cinema.showtimes[i].movie.title + " - " + cinema.showtimes[i].time);
+                }
+
+                var operation = prompt("Select an operation:\n1. Add Showtime\n2. Delete Showtime");
+
+                if (operation === "1") {
+                    // Add showtime
+                    var newMovie = prompt("Enter movie title:");
+                    var newGenre = prompt("Enter movie genre:");
+                    var newTime = prompt("Enter showtime:");
+
+                    cinema.movies.push({ title: newMovie, genre: newGenre });
+                    cinema.showtimes.push({ movie: cinema.movies[cinema.movies.length - 1], time: newTime });
+
+                    alert("Showtime added successfully.");
+                } else if (operation === "2") {
+                    // Delete showtime
+                    var showtimeToDelete = prompt("Enter the number of the showtime to delete:");
+                    cinema.showtimes.splice(showtimeToDelete - 1, 1);
+
+                    alert("Showtime deleted successfully.");
+                } else {
+                    alert("Invalid operation.");
+                }
+            }
+
+            function changeMenu() {
+                alert("Current Menu:");
+                for (var i = 0; i < cinema.menu.items.length; i++) {
+                    alert(i + 1 + ". " + cinema.menu.items[i].name + " - $" + cinema.menu.items[i].price.toFixed(2));
+                }
+
+                var operation = prompt("Select an operation:\n1. Add Menu Item\n2. Remove Menu Item");
+
+                if (operation === "1") {
+                    // Add menu item
+                    var newItemName = prompt("Enter new menu item name:");
+                    var newItemPrice = parseFloat(prompt("Enter new menu item price:"));
+
+                    cinema.menu.items.push({ name: newItemName, price: newItemPrice });
+
+                    alert("Menu item added successfully.");
+                } else if (operation === "2") {
+                    // Remove menu item
+                    var itemToRemove = prompt("Enter the number of the menu item to remove:");
+                    cinema.menu.items.splice(itemToRemove - 1, 1);
+
+                    alert("Menu item removed successfully.");
+                } else {
+                    alert("Invalid operation.");
+                }
+            }
+
+            function showCustomerMenu() {
+                // Implement the customer menu logic...
+                // In this example, skipping the customer menu and going straight to movie options
+                showMovieOptions();
+            }
+
+            function showMovieOptions() {
+                // Display movie options to the user
+                var movieOptions = "Movie Options:\n";
+                for (var i = 0; i < cinema.movies.length; i++) {
+                    movieOptions += (i + 1) + ". " + cinema.movies[i].title + " - " + cinema.movies[i].genre + "\n";
+                }
+                alert(movieOptions);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

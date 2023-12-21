@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Plant Catalog</title>
+</head>
+<body>
+
+  <header>
+    <h1>Plant Glossary</h1>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="search()">Search</button>
+  </header>
+
+  <main>
+    <div id="jasmine" class="plant" onclick="showDescription('Jasmine')">
+      Jasmine
+    </div>
+
+    <div id="prickly pair" class="plant" onclick="showDescription('Prickly Pair')">
+      Prickly Pair
+    </div>
+
+
+    <div id="snake plant" class="plant" onclick="showDescription('Snake Plant')">
+      Snake Plant
+    </div>
+
+    <div id="pothos plant" class="plant" onclick="showDescription('Pothos Plant')">
+      Pothos Plant
+    </div>
+
+    <div id="monstera" class="plant" onclick="showDescription('Monstera')">
+      Monstera
+    </div>
+
+    <div id="jade plant" class="plant" onclick="showDescription('Jade Plant')">
+      Jade Plant
+    </div>
+
+    <div id="bougainvillea" class="plant" onclick="showDescription('Bougainvillea')">
+      Bougainvillea
+    </div>
+
+    <div id="prayer plant" class="plant" onclick="showDescription('Prayer Plant')">
+      Prayer Plant
+    </div>
+   
+
+  </main>
+
+  <div id="plantDescription"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.button {
+    border: none;
+    color: black;
+    padding: 25px 30px;
+    text-align: center; /* Corrected typo here */
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 18px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #91AC9A;
+    padding: 25px 70px;
+}
+
+.button2 {
+    background-color: #A9C3B6;
+}
+
+.button3 {
+    background-color: #CEDFDF;
+}
+
+.button4 {
+    background-color: #B7D1D3;
+    padding: 25px 50px;
+}
+
+.button5 {
+    background-color: #A6C3CE;
+}
+
+.button6 {
+    background-color: #8FB8CA;
+}
+
+.menu-container {
+    text-align: center;
+}

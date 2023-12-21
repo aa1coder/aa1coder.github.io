@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#calculator {
+    width: 300px;
+    margin: 0 auto; /* Center the calculator horizontally */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#display {
+    padding: 10px;
+    background-color: #f5f5f5;
+    text-align: right;
+}
+
+#result {
+    width: 95%;
+    padding: 7px;
+    font-size: 1.5em;
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button.number {
+    background-color: #eee;
+}
+
+button.operator {
+    background-color: #f2f2f2;
+}
+
+button.calculate {
+    background-color: #28a745;
+    color: white;
+    grid-column: span 2; /* Span two columns for the "=" button */
+}
+
+button.clear {
+    background-color: #dc3545;
+    color: white;
+    grid-column: span 2; /* Span two columns for the "C" button */
+}
