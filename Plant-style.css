@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4CAF50;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+}
+
+input[type="text"] {
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+  text-allign: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.plant {
+  background-color: #fa8072;
+  padding: 100px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#plantDescription {
+  padding: 20px;
+  background-color: #fa8072;
+}
+.plant img {
+    max-width: 10%;
+    height: 200px;
+    margin-bottom: 5px; /* Add spacing between image and text */
+}
+.plant.hidden {
+    display: none; /* Hide entries with this class */
+}
