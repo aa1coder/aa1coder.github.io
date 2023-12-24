@@ -39,3 +39,13 @@
 .menu-container {
     text-align: center;
 }
+
+button:hover {
+    box-shadow: 5px 10px 0 #000;
+}
+
+img {
+    style="float:left";
+    max-width: 20%;
+    max-height: 10%;
+    }
